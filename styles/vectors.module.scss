@@ -1,0 +1,123 @@
+@import "./_variables";
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: -10;
+
+  .canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: opacity $animation_duration_long $animation_timing
+      $animation_delay_long;
+
+    // mask-image: radial-gradient(circle at 80% 100%, black 0%, transparent 50%);
+
+    // &:after {
+    //   content: "";
+    //   position: fixed;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+
+    //   background: linear-gradient(
+    //     rgba(0, 0, 0, 0.75) 0%,
+    //     rgba(255, 255, 255, 0) 25%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    // }
+  }
+
+  // .cords {
+  //   position: absolute;
+  //   top: $spacing_200;
+  //   left: $spacing_400;
+  //   right: $spacing_400;
+
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: 4px;
+
+  //   max-width: 1000px;
+  //   gap: $spacing_200;
+  //   margin: 0 auto;
+  //   z-index: 100;
+
+  //   .cord {
+  //     position: relative;
+
+  //     width: 0%;
+  //     height: 100%;
+  //     background: $color_accent;
+  //     border-radius: $border_radius_100;
+
+  //     opacity: 0.8;
+  //     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px;
+
+  //     transition: width $animation_duration_long $animation_timing
+  //       $animation_delay;
+
+  //     &:after {
+  //       content: "";
+  //       position: absolute;
+  //       top: 0;
+  //       left: 0;
+  //       right: 0;
+  //       bottom: 0;
+  //       z-index: 1;
+
+  //       background-size: 10px 10px;
+  //       background-image: repeating-linear-gradient(
+  //           135deg,
+  //           $color_accent_secondary 0,
+  //           $color_accent_secondary 2px,
+  //           $color_accent 0,
+  //           $color_accent 50%
+  //         ),
+  //         linear-gradient(
+  //           0.25turn,
+  //           rgba(0, 0, 0, 0.2),
+  //           rgba(0, 0, 0, 0),
+  //           rgba(0, 0, 0, 0),
+  //           rgba(0, 0, 0, 0),
+  //           rgba(0, 0, 0, 0),
+  //           rgba(0, 0, 0, 0.1)
+  //         );
+  //       border-radius: $border_radius_100;
+  //     }
+
+  //     &:before {
+  //       content: "";
+  //       position: absolute;
+  //       top: -1px;
+  //       right: -1px;
+  //       bottom: -1px;
+  //       z-index: -100;
+
+  //       width: 6px;
+  //       height: 6px;
+  //       background: $color_100;
+  //       border-radius: $border_radius_100;
+  //     }
+  //   }
+  // }
+}
+
+// @keyframes fadein {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }

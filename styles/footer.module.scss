@@ -1,0 +1,29 @@
+@import "./_variables";
+
+.main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  padding: $padding_400;
+  z-index: 0;
+  
+  /* background: $color_accent; */
+
+  h3 {
+    color: $color_background;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    max-width: clamp(650px, 50%, 800px);
+  }
+}

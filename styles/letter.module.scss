@@ -1,0 +1,42 @@
+@import "./_variables";
+
+.main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: $padding_300;
+
+  .letterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    gap: $spacing_200;
+    padding: 7% 9%;
+    max-width: clamp(650px, 50%, 800px);
+    aspect-ratio: 1/1.314;
+
+    background: $color_pure_white;
+    box-shadow: $shadow_standard;
+
+    .letterHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: $spacing_50;
+    }
+
+    .letterBody {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: $spacing_200;
+    }
+  }
+}

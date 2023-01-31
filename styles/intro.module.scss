@@ -1,0 +1,114 @@
+@import "./_variables";
+
+.main {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  gap: 2vw;
+
+  width: 100%;
+  height: 100vh;
+  padding: $padding_200 $padding_200 $padding_200 $padding_400;
+
+  backdrop-filter: blur(50px);
+
+  .location {
+    position: absolute;
+    left: $padding_400;
+    top: $padding_400;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+
+    padding: $padding_400 $padding_100;
+    backdrop-filter: blur(50px);
+    z-index: 10;
+
+    .headerContainer {
+      display: block;
+      overflow: hidden;
+
+      h3 {
+        text-shadow: $color_700 0px 4px 6px, // bottom
+          $color_800 0px -3px 5px; // top
+        // text-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+    }
+
+    .textContainer {
+      max-width: clamp(400px, 70%, 60px);
+    }
+
+    .contactContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $padding_100;
+      min-width: 300px;
+
+      padding: $padding_100;
+      border-radius: $border-radius-100;
+      background: linear-gradient(35deg, $color_700 0%, $color_600 100%);
+      border: $border-standard;
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px, $color_700 0px 0px 0px 1px;
+
+      transition: box-shadow $animation_duration $animation_timing,
+        filter $animation_duration $animation_timing;
+
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px, $color_700 0px 0px 0px 1px,
+          $color_700 0px 0px 0px 1px;
+        filter: brightness(1.02);
+      }
+
+      input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+
+        color: $color_100;
+      }
+
+      button {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        padding: $padding_50 $padding_200 7px;
+
+        font-size: 18px;
+
+        color: $color_700;
+        background: linear-gradient(35deg, $color_300 0%, $color_100 100%);
+        border: $border-dark;
+        border-radius: $border-radius-100;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.12) 0px 0px 0px 1px;
+
+        cursor: pointer;
+        background-position: 100%;
+
+        transition: box-shadow $animation_duration $animation_timing,
+          filter $animation_duration $animation_timing;
+
+        &:hover {
+          filter: brightness(1.5) contrast(1.2);
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.12) 0px 0px 0px 1px, $color_700 0px 0px 0px 1px;
+        }
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+  }
+}
