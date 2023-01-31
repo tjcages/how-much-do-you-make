@@ -5,7 +5,7 @@ import { animateIn } from "../modules/text";
 
 import styles, {
   animationDuration,
-  animationDelay,
+  animationDelayLong,
 } from "../styles/intro.module.scss";
 
 import Notebook from "../components/Notebook";
@@ -36,7 +36,7 @@ const Intro = () => {
           animate={{ opacity: 1, y: "0%" }}
           transition={{
             duration: parseFloat(animationDuration.replace("s", "")),
-            delay: parseFloat(animationDelay.replace("s", "")),
+            delay: parseFloat(animationDelayLong.replace("s", "")),
             ease: "easeOut",
           }}
         >
@@ -52,7 +52,7 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{
             duration: parseFloat(animationDuration.replace("s", "")),
-            delay: parseFloat(animationDelay.replace("s", "")),
+            delay: parseFloat(animationDelayLong.replace("s", "")),
             ease: "easeOut",
           }}
         >

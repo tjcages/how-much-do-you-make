@@ -3,9 +3,9 @@ $color_000: #000000;
 $color_100: #1e1a1b;
 $color_200: #2c2627;
 $color_300: #3f3d3e;
-$color_400: #78686B;
-$color_500: #C4C9D4;
-$color_600: #DCDFE5;
+$color_400: #78686b;
+$color_500: #c4c9d4;
+$color_600: #dcdfe5;
 $color_700: #f3f4f6;
 $color_800: #ffffff;
 
@@ -99,5 +99,6 @@ $animation_timing: cubic-bezier(0.33, 1, 0.68, 1);
   animationDuration: $animation_duration;
   animationDurationLong: $animation_duration_long;
   animationDelay: $animation_delay;
+  animationDelayLong: $animation_delay_long;
   animationTiming: $animation_timing;
 }
