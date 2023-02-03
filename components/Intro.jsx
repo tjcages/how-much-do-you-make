@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Balancer from "react-wrap-balancer";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { animateIn } from "../modules/text";
+import { animateIn, animateOut } from "../modules/text";
 
 import styles, {
   animationDuration,
@@ -11,11 +11,20 @@ import styles, {
 import Notebook from "../components/Notebook";
 
 const Intro = () => {
+  const copy = [
+    "engineers",
+    "designers",
+    "entrepreneurs",
+    "investors",
+    "creatives",
+    "writers",
+  ];
+
   const [value, setValue] = useState("");
 
   useEffect(() => {
     animateIn("line", "header");
-  }, []);
+  });
 
   return (
     <div className={styles.main}>
@@ -24,11 +33,14 @@ const Intro = () => {
       </motion.div>
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
-          <h3 animate="header">
-            Investment strategies of
-            <br />
-            the top earners
-          </h3>
+          <>
+            <h3 animate="header">
+              The financial
+              <br />& investment strategies of
+              <br />
+              top earners
+            </h3>
+          </>
         </div>
         <motion.div
           className={styles.textContainer}

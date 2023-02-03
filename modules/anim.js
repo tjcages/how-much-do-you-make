@@ -2,10 +2,6 @@ export class Animation {
   constructor(element) {
     this.element = element;
 
-    // // displayt none gate
-    // if (this.element.offsetWidth === 0 || this.element.offsetHeight === 0)
-    //   return;
-
     this.createObserver();
     this.start();
   }
@@ -25,12 +21,10 @@ export class Animation {
 
   start() {
     this.observerIn.observe(this.element);
-    // this.observerOut.observe(this.element);
   }
 
   stop() {
     this.observerIn.unobserve(this.element);
-    // this.observerOut.unobserve(this.element);
   }
 
   animIn() {}

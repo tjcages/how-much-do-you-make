@@ -1,6 +1,6 @@
 import styles from "../styles/notebook.module.scss";
 
-import { Cards } from "./Cards";
+import Cards from "./Cards";
 
 const Notebook = () => {
   return (

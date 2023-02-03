@@ -99,6 +99,7 @@ export class Line extends Text {
   }
 }
 
+
 export function animateIn(type, target) {
   const id = `[animate=${target}]`;
   switch (type) {
@@ -131,6 +132,44 @@ export function animateIn(type, target) {
         const el = new Word(item);
         el.setOut();
         el.animIn();
+
+        return el;
+      });
+  }
+}
+
+export function animateOut(type, target) {
+  const id = `[animate=${target}]`;
+  switch (type) {
+    case "char":
+      return [...document.querySelectorAll(id)].map((item) => {
+        const el = new Char(item);
+        el.setIn();
+        el.animOut();
+
+        return el;
+      });
+    case "word":
+      return [...document.querySelectorAll(id)].map((item) => {
+        const el = new Word(item);
+        el.setIn();
+        el.animOut();
+
+        return el;
+      });
+    case "line":
+      return [...document.querySelectorAll(id)].map((item) => {
+        const el = new Line(item);
+        el.setIn();
+        el.animOut();
+
+        return el;
+      });
+    default:
+      return [...document.querySelectorAll(id)].map((item) => {
+        const el = new Word(item);
+        el.setIn();
+        el.animOut();
 
         return el;
       });

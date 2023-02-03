@@ -33,13 +33,15 @@
     z-index: 10;
 
     .headerContainer {
+      position: relative;
+
       display: block;
       overflow: hidden;
 
-      h3 {
-        text-shadow: $color_700 0px 4px 6px, // bottom
-          $color_800 0px -3px 5px; // top
-        // text-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      .word {
+        position: absolute;
+        bottom: 0;
+        left: 0;
       }
     }
 
