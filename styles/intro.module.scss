@@ -19,6 +19,10 @@
     position: absolute;
     left: $padding_400;
     top: $padding_400;
+
+    p {
+      color: $color_200;
+    }
   }
 
   .container {
@@ -106,6 +110,32 @@
           box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
             rgba(0, 0, 0, 0.12) 0px 0px 0px 1px, $color_700 0px 0px 0px 1px;
         }
+      }
+    }
+  }
+
+  .readby {
+    position: absolute;
+    left: $padding_400;
+    bottom: $padding_400;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: $padding_200;
+
+    margin-top: $padding_200;
+
+    .companies {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: $padding_200;
+
+      img {
+        transform: scale(0.9);
       }
     }
   }

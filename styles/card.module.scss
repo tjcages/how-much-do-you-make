@@ -21,14 +21,15 @@
     align-items: center;
     gap: $padding-100;
 
+    padding: $padding-300;
+
     .header {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: flex-start;
       align-items: center;
       gap: $padding-200;
       width: 100%;
-      padding: $padding-300 $padding-300 0;
 
       .profile {
         border-radius: $border_radius_200;
@@ -52,18 +53,17 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: $padding-200;
+    gap: $padding-300;
 
     width: 100%;
-    padding: 0 $padding-300;
     margin-top: $padding-200;
 
     .item {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: $padding-100;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: $padding-100/2;
 
       width: 100%;
 

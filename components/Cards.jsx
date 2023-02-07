@@ -1,5 +1,4 @@
 import { Tile } from "./Tile";
-import { motion, useSpring } from "framer-motion";
 import { useParentSize } from "../modules/hooks";
 import { useState } from "react";
 

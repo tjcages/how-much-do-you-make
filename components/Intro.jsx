@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { animateIn, animateOut } from "../modules/text";
@@ -33,14 +34,12 @@ const Intro = () => {
       </motion.div>
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
-          <>
-            <h3 animate="header">
-              Get smarter
-              <br />
-              on money
-              <br />& investing
-            </h3>
-          </>
+          <h3 animate="header">
+            The investing
+            <br />& financial strategies
+            <br />
+            of top earners
+          </h3>
         </div>
         <motion.div
           className={styles.textContainer}
@@ -75,7 +74,41 @@ const Intro = () => {
           />
           <button>→</button>
         </motion.div>
+
       </motion.div>
+        <div className={styles.readby}>
+          <p>Read by leaders at</p>
+          <div className={styles.companies}>
+            <Image
+              src="/companies/google.png"
+              alt="google"
+              width={64}
+              height={64}
+              style={{ width: "100%", height: "auto" }}
+            />
+            <Image
+              src="/companies/robinhood.png"
+              alt="robinhood"
+              width={68}
+              height={68}
+              style={{ width: "100%", height: "auto" }}
+            />
+            <Image
+              src="/companies/amazon.png"
+              alt="amazon"
+              width={64}
+              height={64}
+              style={{ width: "100%", height: "auto" }}
+            />
+            <Image
+              src="/companies/carta.png"
+              alt="carta"
+              width={64}
+              height={64}
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+        </div>
 
       <div className={styles.content}>
         <Notebook />

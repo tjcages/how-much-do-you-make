@@ -34,7 +34,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
 
   // I usually work with hsl() model
   // bgLightness defines the l component of the background
-  const bgLightness = 13;
+  const bgLightness = 3;
 
   // I don't want any card to be darker
   // than the background itself
@@ -55,7 +55,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
 
   const styler = {
     [isLeft]: {
-      posX: offsetCalc(-1.25, 0),
+      posX: offsetCalc(-1.5, 0),
       posY: offsetCalc(-0.25, 1),
       posZ: offsetCalc(0, 1),
       rotX: 0,
@@ -163,7 +163,9 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         rotateY: dRotY,
         rotateZ: dRotZ,
         width: `${cardWidth}px`,
+        maxWidth: 340,
         height: `${cardHeight}px`,
+        maxHeight: 464,
         top: `50%`,
         left: `50%`,
         zIndex: length - i,
@@ -199,27 +201,30 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.item}>
-            <hr />
-            <p>Software Engineer, Google</p>
+            <p>Current Role</p>
+            <h5>Software Engineer, Google</h5>
           </div>
           <div className={styles.item}>
-            <hr />
-            <p>Angel Investing</p>
+            <p>Annual Income</p>
+            <h5>$300,000</h5>
           </div>
           <div className={styles.item}>
-            <hr />
-            <p>Amazon FBA</p>
+            <p>Side Hustle</p>
+            <h5>Many, including Amazon FBA</h5>
           </div>
-          {/* <div className={styles.assets}>
-            <span className={styles.disabled}>Fixed Income</span>
-            <span>Angel Investing</span>
-            <span>Cash</span>
-            <span className={styles.disabled}>Real Estate</span>
-            <span>Crypto</span>
-            <span>Public Equities</span>
-          </div> */}
+          <div className={styles.item}>
+            <p>Asset Classes</p>
+            <div className={styles.assets}>
+              <span className={styles.disabled}>Fixed Income</span>
+              <span>Angel Investing</span>
+              <span>Cash</span>
+              <span className={styles.disabled}>Real Estate</span>
+              <span>Crypto</span>
+              <span>Public Equities</span>
+            </div>
+          </div>
         </div>
-        <div className={styles.make}>
+        {/* <div className={styles.make}>
           <p>Net Worth</p>
           <div
             className={styles.large}
@@ -229,7 +234,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
           >
             {name}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.gradient} />
