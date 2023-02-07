@@ -29,16 +29,16 @@ const Intro = () => {
   return (
     <div className={styles.main}>
       <motion.div className={styles.location}>
-        <p>New York, NY</p>
+        <p>How Much Do You Make? 📈</p>
       </motion.div>
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
           <>
             <h3 animate="header">
-              The financial
-              <br />& investment strategies of
+              Get smarter
               <br />
-              top earners
+              on money
+              <br />& investing
             </h3>
           </>
         </div>
@@ -54,7 +54,7 @@ const Intro = () => {
         >
           <h5>
             <Balancer>
-              An inside look at the personal finances of young professionals.
+              Learn strategies, tax hacks, tools, and more from engineers.
             </Balancer>
           </h5>
         </motion.div>

@@ -182,52 +182,57 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
 
       {/* CONTENT */}
       <div className={styles.content}>
-        <Image
-          className={styles.profile}
-          src={
-            "https://pbs.twimg.com/profile_images/1588631584474898438/3Nb6U6cQ_400x400.jpg"
-          }
-          alt={"profile"}
-          width={56}
-          height={56}
-        />
         <div className={styles.header}>
-          <h5>Andrew Rea, 25</h5>
-          <p>@andrew_rea</p>
+          <Image
+            className={styles.profile}
+            src={
+              "https://pbs.twimg.com/profile_images/1588631584474898438/3Nb6U6cQ_400x400.jpg"
+            }
+            alt={"profile"}
+            width={56}
+            height={56}
+          />
+          <div className={styles.titles}>
+            <h5>Andrew, 25</h5>
+            <p>New York, NY</p>
+          </div>
+        </div>
+        <div className={styles.info}>
+          <div className={styles.item}>
+            <hr />
+            <p>Software Engineer, Google</p>
+          </div>
+          <div className={styles.item}>
+            <hr />
+            <p>Angel Investing</p>
+          </div>
+          <div className={styles.item}>
+            <hr />
+            <p>Amazon FBA</p>
+          </div>
+          {/* <div className={styles.assets}>
+            <span className={styles.disabled}>Fixed Income</span>
+            <span>Angel Investing</span>
+            <span>Cash</span>
+            <span className={styles.disabled}>Real Estate</span>
+            <span>Crypto</span>
+            <span>Public Equities</span>
+          </div> */}
+        </div>
+        <div className={styles.make}>
+          <p>Net Worth</p>
+          <div
+            className={styles.large}
+            style={{
+              fontSize: `${size * 0.13}px`,
+            }}
+          >
+            {name}
+          </div>
         </div>
       </div>
 
-      <div className={styles.make}>
-        <div
-          style={{
-            fontSize: `${size * 0.15}px`,
-            fontWeight: 800,
-            color: "hsla(0,0%,0%,0.25)",
-            transform: `translateY(${size * 0.15}px)`,
-            textShadow: "1.5px 1.5px 0px hsla(0,100%,100%,0.1)",
-          }}
-        >
-          {name}
-        </div>
-      </div>
-
-      <div className={styles.info}>
-        <div className={styles.item}>
-          <p>Lives</p>
-          <hr />
-          <p>New York, NY</p>
-        </div>
-        <div className={styles.item}>
-          <p>Job</p>
-          <hr />
-          <p>Associate, VC</p>
-        </div>
-        <div className={styles.item}>
-          <p>Income</p>
-          <hr />
-          <p>$250,000</p>
-        </div>
-      </div>
+      <div className={styles.gradient} />
     </motion.div>
   );
 };
