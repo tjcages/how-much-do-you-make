@@ -12,16 +12,9 @@ import styles, {
 
 import Notebook from "../components/Notebook";
 
-const Intro = () => {
-  const copy = [
-    "engineers",
-    "designers",
-    "entrepreneurs",
-    "investors",
-    "creatives",
-    "writers",
-  ];
+const Intro = ({ mobile }) => {
 
+  console.log(mobile)
   const companies = [
     {
       name: "Google",
@@ -63,8 +56,7 @@ const Intro = () => {
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
           <h3 animate="header">
-            Dive into the investment strategies of
-            top earners
+            Dive into the investment strategies of top earners
           </h3>
         </div>
         <motion.div
@@ -118,9 +110,11 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className={styles.content}>
-        <Notebook />
-      </div>
+      {!mobile && (
+        <div className={styles.content}>
+          <Notebook />
+        </div>
+      )}
     </div>
   );
 };
