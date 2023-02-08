@@ -25,7 +25,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
     isLeft: i < length,
     isFirst: i === length,
     isCenter: i > length && i <= length * 2 - 1,
-    isRight: i > length * 2 - 1 && i < length * 3,
+    isRight: i > length * 2 - 3 && i < length * 3,
   };
 
   // Another helper to start counting
@@ -64,7 +64,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
       background: backgroundCalc(95, 0),
     },
     [isFirst]: {
-      posX: offsetCalc(-0.25, -cardWidth / 6 / i),
+      posX: offsetCalc(-0.2, -cardWidth / 6 / i),
       posY: offsetCalc(-0.425, 1),
       posZ: offsetCalc(0, 1),
       rotX: 0,
@@ -79,7 +79,7 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
       rotX: i * -1,
       rotY: i * -5,
       rotZ: -35 + i * 6.5,
-      background: backgroundCalc(100, -25),
+      background: backgroundCalc(1000, -25),
     },
     [isRight]: {
       posX: offsetCalc(1.5, 0),
@@ -163,9 +163,9 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         rotateY: dRotY,
         rotateZ: dRotZ,
         width: `${cardWidth}px`,
-        maxWidth: 340,
+        maxWidth: 324,
         height: `${cardHeight}px`,
-        maxHeight: 464,
+        maxHeight: 424,
         top: `50%`,
         left: `50%`,
         zIndex: length - i,
@@ -175,8 +175,8 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         cursor: isFirst ? "grab" : "pointer",
         boxShadow: `0 ${size * 0.025}px ${size * 0.05}px ${
           size * 0.025
-        }px hsla(0,0%,13%,0.5),
-        inset 2px 2px 0 0 hsla(0,0%,100%, 0.1), rgb(0 0 0 / 70%) 0px 50px 70px -40px, rgb(0 0 0 / 50%) 0px 28px 26px -38px`,
+        }px hsla(0,0%,90%,0.5),
+        inset 2px 2px 0 0 hsla(0,0%,100%, 0.1), rgb(0 0 0 / 20%) 0px 50px 70px -40px, rgb(0 0 0 / 100%) 0px 28px 26px -38px, rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px`,
         touchAction: "auto",
       }}
     >
@@ -191,8 +191,8 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
               "https://pbs.twimg.com/profile_images/1588631584474898438/3Nb6U6cQ_400x400.jpg"
             }
             alt={"profile"}
-            width={56}
-            height={56}
+            width={48}
+            height={48}
           />
           <div className={styles.titles}>
             <h5>Andrew, 25</h5>
@@ -201,27 +201,26 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.item}>
-            <p>Current Role</p>
-            <h5>Software Engineer, Google</h5>
+            <em>Current Role</em>
+            <p>Software Engineer, Google</p>
           </div>
           <div className={styles.item}>
-            <p>Annual Income</p>
-            <h5>$300,000</h5>
+            <em>Annual Income</em>
+            <p>$300,000</p>
           </div>
           <div className={styles.item}>
-            <p>Side Hustle</p>
-            <h5>Many, including Amazon FBA</h5>
+            <em>Side Hustle</em>
+            <p>Many, including Amazon FBA</p>
           </div>
-          <div className={styles.item}>
-            <p>Asset Classes</p>
-            <div className={styles.assets}>
-              <span className={styles.disabled}>Fixed Income</span>
-              <span>Angel Investing</span>
-              <span>Cash</span>
-              <span className={styles.disabled}>Real Estate</span>
-              <span>Crypto</span>
-              <span>Public Equities</span>
-            </div>
+        </div>
+        <div className={styles.item}>
+          <em>Asset Classes</em>
+          <div className={styles.assets}>
+            <strong>Angel Investing</strong>
+            <strong>Real Estate</strong>
+            <strong>Cash</strong>
+            <strong>Crypto</strong>
+            <strong>Public Equities</strong>
           </div>
         </div>
         {/* <div className={styles.make}>

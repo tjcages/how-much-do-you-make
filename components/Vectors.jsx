@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import styles, {
-  color100,
-  color800,
+  color700,
+  color400,
   padding100,
 } from "../styles/vectors.module.scss";
 
@@ -16,8 +16,8 @@ const Sketch = async (p) => {
   var dphi;
   var gamma;
   var lineX;
-  var color = color800;
-  var background = color100;
+  var color = color400;
+  var background = color700;
   var margin = parseInt(padding100.replace(/\D/g, ""));
 
   function hexToRGB(h) {
@@ -109,14 +109,8 @@ const Vectors = () => {
       <div
         ref={ref}
         className={styles.canvas}
-        style={{ opacity: set ? 0.6 : 0 }}
+        style={{ opacity: set ? 0.2 : 0 }}
       />
-      {/* <div className={styles.cords}>
-        <div className={styles.cord} style={{ width: set ? "100%" : "0%" }} />
-        <div className={styles.cord} style={{ width: set ? "100%" : "0%" }} />
-        <div className={styles.cord} style={{ width: set ? "100%" : "0%" }} />
-        <div className={styles.cord} style={{ width: set ? "100%" : "0%" }} />
-      </div> */}
     </div>
   );
 };

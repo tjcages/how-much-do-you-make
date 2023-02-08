@@ -21,6 +21,8 @@
     align-items: center;
     gap: $padding-100;
 
+    background-color: rgba(255, 255, 255, 0.8);
+
     padding: $padding-300;
 
     .header {
@@ -28,14 +30,13 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      gap: $padding-200;
+      gap: $padding-100;
       width: 100%;
 
       .profile {
         border-radius: $border_radius_200;
-        box-shadow: rgb(0 0 0 / 6%) 0px 13.3021px 22.8037px,
-          rgb(0 0 0 / 8%) 0px 13.3021px 15.2024px,
-          rgb(0 0 0 / 6%) 0px 3.80061px 3.80061px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       }
 
       .titles {
@@ -53,53 +54,36 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: $padding-300;
+    gap: $padding-200;
 
     width: 100%;
-    margin-top: $padding-200;
+  }
 
-    .item {
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: $padding-100/2;
+
+    width: 100%;
+
+    hr {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: $padding-100/2;
-
-      width: 100%;
-
-      hr {
-        display: flex;
-        flex: 1;
-      }
+      flex: 1;
     }
+  }
 
-    .assets {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      flex-wrap: wrap;
-      gap: $padding-100/2;
-      margin-top: $padding-100;
+  .assets {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $padding-100/2;
 
-      span {
-        padding: $padding-100/2 $padding-100;
-
-        font-size: 12px;
-        border: 1px solid $color_300;
-        border-radius: $padding-400;
-
-        flex-wrap: nowrap;
-        white-space: nowrap;
-
-        &.disabled {
-          color: $color_400;
-          border-color: $color_400;
-          opacity: 0.6;
-        }
-      }
-    }
+    margin-top: $padding-100;
+    width: 100%;
   }
 
   .gradient {

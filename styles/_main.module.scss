@@ -68,6 +68,30 @@
     color: $color_400;
   }
 
+  em {
+    font-family: $font-secondary;
+    font-size: $font-size-050;
+    font-weight: $font_weight_100;
+    font-style: normal;
+
+    color: $color_400;
+  }
+
+  strong {
+    padding: $padding-100/2 $padding-100;
+
+    font-size: 14px !important;
+    font-family: $font-secondary;
+    font-weight: $font_weight_100;
+
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    color: $color_400 !important;
+    border: $border-standard;
+    border-radius: $padding-400;
+  }
+
   input {
     font-family: $font-secondary;
     font-size: $font-size-100;
