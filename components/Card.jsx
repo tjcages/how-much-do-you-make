@@ -240,7 +240,7 @@ const Card = ({ i, card, length, size, rotateArray, current }) => {
       </div>
 
       <div className={styles.gradient} />
-      {isFirst && (
+      {isFirst && card.content["Article_Link"] && (
         <Link
           className={styles.link}
           href={card.content["Article_Link"]}
