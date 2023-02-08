@@ -24,9 +24,7 @@ const Intro = () => {
       </motion.div>
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
-          <h3 animate="header">
-            Interviews with top earners on money & investing
-          </h3>
+          <h3 animate="header">Interviews on money & investing</h3>
         </div>
         <motion.div
           className={styles.textContainer}
