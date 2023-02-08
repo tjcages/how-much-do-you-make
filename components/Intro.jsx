@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import { animateIn } from "../modules/text";
@@ -8,11 +8,10 @@ import styles, {
   animationDelayLong,
 } from "../styles/intro.module.scss";
 
+import Subscribe from "./Subscribe";
 import ReadBy from "./ReadBy";
 
 const Intro = () => {
-  const [value, setValue] = useState("");
-
   useEffect(() => {
     animateIn("line", "header");
   }, []);
@@ -40,23 +39,8 @@ const Intro = () => {
             <Balancer>Learn strategies, tax hacks, tools, and more.</Balancer>
           </h5>
         </motion.div>
-        <motion.div
-          className={styles.contactContainer}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: parseFloat(animationDuration.replace("s", "")),
-            delay: parseFloat(animationDelayLong.replace("s", "")),
-            ease: "easeOut",
-          }}
-        >
-          <input
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder={"Get the newsletter"}
-          />
-          <button>→</button>
-        </motion.div>
+
+        <Subscribe />
       </motion.div>
 
       <ReadBy />

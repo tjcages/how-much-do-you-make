@@ -19,7 +19,8 @@
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^0.3.0",
     "sass": "^1.57.1",
-    "split-type": "^0.3.3"
+    "split-type": "^0.3.3",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "eslint": "8.32.0",

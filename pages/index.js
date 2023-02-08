@@ -29,7 +29,7 @@ export default function Home() {
       }
     };
 
-    getCards();
+    if (cards == null) getCards();
   }, [cards]);
 
   return (

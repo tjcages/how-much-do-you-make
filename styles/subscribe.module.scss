@@ -1,0 +1,100 @@
+@import "./_variables";
+
+.main {
+  position: relative;
+
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: $padding_100;
+    min-width: 300px;
+
+    padding: $padding_100/2 $padding_100/2 $padding_100/2 $padding_100;
+    border-radius: $border-radius-100;
+    background: linear-gradient(350deg, $color_700 0%, $color_600 100%);
+    border: $border-standard;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px, $color_700 0px 0px 0px 1px;
+
+    transition: box-shadow $animation_duration $animation_timing,
+      filter $animation_duration $animation_timing;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px, $color_700 0px 0px 0px 1px,
+        $color_700 0px 0px 0px 1px;
+      filter: brightness(1.02);
+    }
+
+    input {
+      display: flex;
+      width: 100%;
+
+      background-color: transparent;
+      outline: none;
+      border: none;
+
+      color: $color_100;
+    }
+
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      padding: $padding_50 $padding_200 7px;
+
+      font-size: 18px;
+
+      color: $color_700;
+      background: linear-gradient(35deg, $color_300 0%, $color_100 100%);
+      border: $border-dark;
+      border-radius: $border-radius-100/2;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.12) 0px 0px 0px 1px;
+
+      cursor: pointer;
+      background-position: 100%;
+
+      transition: box-shadow $animation_duration $animation_timing,
+        filter $animation_duration $animation_timing;
+
+      &:hover {
+        filter: brightness(1.5) contrast(1.2);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.12) 0px 0px 0px 1px, $color_700 0px 0px 0px 1px;
+      }
+    }
+  }
+
+  .success {
+    position: absolute;
+    left: 0;
+    top: $padding-400 + $padding-100/2;
+
+    padding: $padding_100/2 $padding_100;
+    background: $color_600;
+    box-shadow: $shadow_standard;
+    border-radius: $border-radius-100;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6em;
+    white-space: nowrap;
+
+    opacity: 0;
+    transform: translateX(-24px);
+
+    transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1),
+      transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+
+    &.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &.error {
+      background: $color_bad;
+      color: $color_700;
+    }
+  }
+}
