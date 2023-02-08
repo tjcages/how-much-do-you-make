@@ -13,8 +13,7 @@ import styles, {
 import Notebook from "../components/Notebook";
 
 const Intro = ({ mobile }) => {
-
-  console.log(mobile)
+  console.log(mobile);
   const companies = [
     {
       name: "Google",
@@ -56,7 +55,7 @@ const Intro = ({ mobile }) => {
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
           <h3 animate="header">
-            Dive into the investment strategies of top earners
+            Interviews with top earners on money<br />& investing
           </h3>
         </div>
         <motion.div
@@ -70,9 +69,7 @@ const Intro = ({ mobile }) => {
           }}
         >
           <h5>
-            <Balancer>
-              Learn strategies, tax hacks, tools, and more from engineers.
-            </Balancer>
+            <Balancer>Learn strategies, tax hacks, tools, and more.</Balancer>
           </h5>
         </motion.div>
         <motion.div
