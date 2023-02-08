@@ -12,7 +12,7 @@ const spring = {
   restSpeed: 0.0001,
 };
 
-const Card = ({ i, name, length, size, rotateArray, current }) => {
+const Card = ({ i, card, length, size, rotateArray, current }) => {
   // Card is sized relatively to the container,
   // just to maintain all ratios.
 
@@ -128,6 +128,8 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
     }
   };
 
+  console.log(card);
+
   return (
     <motion.div
       className={styles.card}
@@ -189,41 +191,41 @@ const Card = ({ i, name, length, size, rotateArray, current }) => {
         <div className={styles.header}>
           <Image
             className={styles.profile}
-            src={
-              "https://pbs.twimg.com/profile_images/1588631584474898438/3Nb6U6cQ_400x400.jpg"
-            }
+            src={card.content["Profile_Link"]}
             alt={"profile"}
             width={48}
             height={48}
           />
           <div className={styles.titles}>
-            <h5>Andrew, 25</h5>
-            <p>New York, NY</p>
+            <h5>
+              {card.content["Name"]}, {card.content["Age"]}
+            </h5>
+            <p>{card.content["Lives"]}</p>
           </div>
         </div>
         <div className={styles.info}>
           <div className={styles.item}>
-            <em>Current Role</em>
-            <p>Software Engineer, Google</p>
+            <em>{card.content["Title_1"]}</em>
+            <p>{card.content["Title_1_Value"]}</p>
           </div>
           <div className={styles.item}>
-            <em>Annual Income</em>
-            <p>$300,000</p>
+            <em>{card.content["Title_2"]}</em>
+            <p>{card.content["Title_2_Value"]}</p>
           </div>
           <div className={styles.item}>
-            <em>Side Hustle</em>
-            <p>Many, including Amazon FBA</p>
+            <em>{card.content["Title_3"]}</em>
+            <p>{card.content["Title_3_Value"]}</p>
           </div>
         </div>
         <div className={styles.item}>
-          <em>Asset Classes</em>
-          <div className={styles.assets}>
-            <strong>Angel Investing</strong>
-            <strong>Real Estate</strong>
-            <strong>Cash</strong>
-            <strong>Crypto</strong>
-            <strong>Public Equities</strong>
-          </div>
+          <em>{card.content["Title_4"]}</em>
+          {card.content["Title_4_Value"] && (
+            <div className={styles.assets}>
+              {card.content["Title_4_Value"].map((item, index) => (
+                <strong key={index}>{item}</strong>
+              ))}
+            </div>
+          )}
         </div>
         {/* <div className={styles.make}>
           <p>Net Worth</p>

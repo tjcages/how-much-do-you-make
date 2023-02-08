@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { useLayoutEffect, useRef, useState, forwardRef } from "react";
+import { useLayoutEffect, useRef, forwardRef } from "react";
 import Link from "next/link";
 
 import styles from "../styles/tile.module.scss";
@@ -10,6 +10,7 @@ export const Tile = forwardRef(
   (
     {
       children,
+      cards,
       col = 1,
       row = 1,
       perspective = false,
@@ -20,8 +21,6 @@ export const Tile = forwardRef(
     },
     ref
   ) => {
-    const [set, getSet] = useState(false);
-
     useLayoutEffect(() => {
       function setupTile() {
         wrapperRef.current.setAttribute(
@@ -31,8 +30,6 @@ export const Tile = forwardRef(
          grid-row: span calc(${row} * var(--gridBase));
         `
         );
-
-        getSet(true);
       }
 
       function handleResize() {
@@ -54,7 +51,7 @@ export const Tile = forwardRef(
           className={styles.view}
           ref={ref}
           style={{
-            opacity: set ? 1 : 0,
+            opacity: cards ? 1 : 0,
             background: dark ? "hsla(0, 0%, 13%, 1)" : "#fafafa",
             perspective: perspective ? `${perspectiveDist * 2}px` : "none",
             touchAction: "none",
@@ -66,7 +63,7 @@ export const Tile = forwardRef(
         <Link
           href="/read"
           className={`${styles.caption} ${styles.bottom}`}
-          style={{ opacity: set ? 1 : 0 }}
+          style={{ opacity: cards ? 1 : 0 }}
         >
           <p>{captionBot}</p>
           <div className={styles.underline} />

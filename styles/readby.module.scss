@@ -1,0 +1,36 @@
+@import "./_variables";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: $padding_200;
+
+  margin-top: $padding_200;
+
+  @media only screen and (max-width: 768px) {
+    & {
+      left: $padding_200;
+      bottom: $padding_200;
+    }
+  }
+
+  .companies {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $padding_200;
+
+    @media only screen and (max-width: 768px) {
+      & {
+        gap: $padding_100;
+      }
+    }
+
+    img {
+      transform: scale(0.9);
+    }
+  }
+}

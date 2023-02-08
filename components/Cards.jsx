@@ -4,34 +4,29 @@ import { useState } from "react";
 
 import Card from "./Card";
 
-//  Create some data where each item
-//  in the array will represent an unique card
+const Cards = ({ cards, col, row }) => {
+  // Mapping function to create duplicates with UIDs
+  const mapData = (data, prefix) =>
+    cards.map((item, i) => ({
+      id: `${prefix}${i}`,
+      content: item,
+      index: i,
+    }));
 
-const data = ["$450k", "$10M", "$250k", "$3.2M", "$5"];
+  // Array we are going to work with
+  const dataClone = [
+    // First 3 duplicates are going to be rendered:
+    // One is for exit animations
+    ...mapData(cards, "1"),
+    // Second one is being displayed on screen
+    ...mapData(cards, "2"),
+    // Third one is for inital aniamtion
+    ...mapData(cards, "3"),
+    // Last one is to avoid cards animation
+    // from the final position to the initial one
+    ...mapData(cards, "4"),
+  ];
 
-// Mapping function to create duplicates with UIDs
-const mapData = (data, prefix) =>
-  data.map((item, i) => ({
-    id: `${prefix}${i}`,
-    content: item,
-    index: i,
-  }));
-
-// Array we are going to work with
-const dataClone = [
-  // First 3 duplicates are going to be rendered:
-  // One is for exit animations
-  ...mapData(data, "1"),
-  // Second one is being displayed on screen
-  ...mapData(data, "2"),
-  // Third one is for inital aniamtion
-  ...mapData(data, "3"),
-  // Last one is to avoid cards animation
-  // from the final position to the initial one
-  ...mapData(data, "4"),
-];
-
-const Cards = ({ col, row }) => {
   const [ref, size] = useParentSize();
   const [state, setState] = useState({ current: 0, arr: dataClone });
 
@@ -54,6 +49,7 @@ const Cards = ({ col, row }) => {
 
   return (
     <Tile
+      cards={cards}
       captionTop=""
       captionBot="Read the interviews →"
       col={col}
@@ -71,14 +67,14 @@ const Cards = ({ col, row }) => {
           // The fourth copy should be out of render,
           // otherwise cards will also animate
           // from last to first position
-          i < data.length * 3 && (
+          i < cards.length * 3 && (
             <Card
               key={item.id}
               i={i}
               current={state.current}
-              name={item.content}
+              card={item}
               rotateArray={rotateArray}
-              length={data.length}
+              length={cards.length}
               size={size}
               style={state.style}
             />

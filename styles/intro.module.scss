@@ -3,17 +3,14 @@
 .main {
   position: relative;
 
-  display: grid;
-  grid-template-columns: 1fr clamp(300px, 40vw, 600px);
-  grid-template-rows: 1fr;
-  align-items: center;
-  gap: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 
   width: 100%;
-  height: 100vh;
-  padding: $padding_200 $padding_200 $padding_200 $padding_400;
-
-  backdrop-filter: blur(50px);
+  height: 100%;
+  padding: $padding_200 0 $padding_200 $padding_200;
 
   @media only screen and (max-width: 768px) {
     & {
@@ -32,17 +29,6 @@
   }
 
   .location {
-    position: absolute;
-    left: $padding_400;
-    top: $padding_400;
-
-    @media only screen and (max-width: 768px) {
-      & {
-        left: $padding_200;
-        top: $padding_200;
-      }
-    }
-
     p {
       color: $color_200;
     }
@@ -55,7 +41,6 @@
     align-items: flex-start;
     gap: 2rem;
 
-    // padding: $padding_400 $padding_100;
     backdrop-filter: blur(50px);
     z-index: 10;
 
@@ -90,7 +75,7 @@
 
       padding: $padding_100/2 $padding_100/2 $padding_100/2 $padding_100;
       border-radius: $border-radius-100;
-      background: linear-gradient(35deg, $color_700 0%, $color_600 100%);
+      background: linear-gradient(350deg, $color_700 0%, $color_600 100%);
       border: $border-standard;
       box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px, $color_700 0px 0px 0px 1px;
 
@@ -142,48 +127,5 @@
         }
       }
     }
-  }
-
-  .readby {
-    position: absolute;
-    left: $padding_400;
-    bottom: $padding_400;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: $padding_200;
-
-    margin-top: $padding_200;
-
-    @media only screen and (max-width: 768px) {
-      & {
-        left: $padding_200;
-        bottom: $padding_200;
-      }
-    }
-
-    .companies {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      gap: $padding_200;
-
-      @media only screen and (max-width: 768px) {
-        & {
-          gap: $padding_100;
-        }
-      }
-
-      img {
-        transform: scale(0.9);
-      }
-    }
-  }
-
-  .content {
-    position: relative;
   }
 }

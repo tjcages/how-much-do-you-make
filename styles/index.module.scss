@@ -1,0 +1,35 @@
+@import "./_variables";
+
+.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: grid;
+  grid-template-columns: 1fr clamp(300px, 40vw, 600px);
+  grid-template-rows: 1fr;
+  align-items: center;
+  gap: 2vw;
+
+  padding: $padding_200;
+
+  backdrop-filter: blur(50px);
+
+  @media only screen and (max-width: 768px) {
+    & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: auto;
+
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      padding: $padding_200;
+    }
+  }
+}

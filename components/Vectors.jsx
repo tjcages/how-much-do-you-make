@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import styles, {
-  color700,
+  color600,
   color400,
   padding100,
 } from "../styles/vectors.module.scss";
@@ -17,7 +17,7 @@ const Sketch = async (p) => {
   var gamma;
   var lineX;
   var color = color400;
-  var background = color700;
+  var background = color600;
   var margin = parseInt(padding100.replace(/\D/g, ""));
 
   function hexToRGB(h) {

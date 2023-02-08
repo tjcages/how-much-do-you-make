@@ -1,46 +1,16 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import Balancer from "react-wrap-balancer";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { animateIn, animateOut } from "../modules/text";
+import { motion } from "framer-motion";
+import { animateIn } from "../modules/text";
 
 import styles, {
   animationDuration,
   animationDelayLong,
 } from "../styles/intro.module.scss";
 
-import Notebook from "../components/Notebook";
+import ReadBy from "./ReadBy";
 
-const Intro = ({ mobile }) => {
-  console.log(mobile);
-  const companies = [
-    {
-      name: "Google",
-      src: "/companies/google.png",
-      href: "https://www.google.com/",
-      size: 64,
-    },
-    {
-      name: "Robinhood",
-      src: "/companies/robinhood.png",
-      href: "https://www.robinhood.com/",
-      size: 66,
-    },
-    {
-      name: "Amazon",
-      src: "/companies/amazon.png",
-      href: "https://www.amazon.com/",
-      size: 64,
-    },
-    {
-      name: "Carta",
-      src: "/companies/carta.png",
-      href: "https://www.carta.com/",
-      size: 64,
-    },
-  ];
-
+const Intro = () => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -55,7 +25,7 @@ const Intro = ({ mobile }) => {
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
           <h3 animate="header">
-            Interviews with top earners on money<br />& investing
+            Interviews with top earners on money & investing
           </h3>
         </div>
         <motion.div
@@ -90,28 +60,8 @@ const Intro = ({ mobile }) => {
           <button>→</button>
         </motion.div>
       </motion.div>
-      <div className={styles.readby}>
-        <p>Read by leaders at</p>
-        <div className={styles.companies}>
-          {companies.map((company, index) => (
-            <Link key={index} href={company.href} target="_blank">
-              <Image
-                src={company.src}
-                alt={company.name}
-                width={company.size}
-                height={company.size}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </Link>
-          ))}
-        </div>
-      </div>
 
-      {!mobile && (
-        <div className={styles.content}>
-          <Notebook />
-        </div>
-      )}
+      <ReadBy />
     </div>
   );
 };

@@ -2,10 +2,10 @@ import styles from "../styles/notebook.module.scss";
 
 import Cards from "./Cards";
 
-const Notebook = () => {
+const Notebook = ({ cards }) => {
   return (
     <div className={styles.grid}>
-      <Cards col={2} row={2} />
+      {cards && <Cards cards={cards} col={2} row={2} />}
     </div>
   );
 };
