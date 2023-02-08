@@ -128,8 +128,6 @@ const Card = ({ i, card, length, size, rotateArray, current }) => {
     }
   };
 
-  console.log(card);
-
   return (
     <motion.div
       className={styles.card}

@@ -7,7 +7,7 @@ import Card from "./Card";
 const Cards = ({ cards, col, row }) => {
   // Mapping function to create duplicates with UIDs
   const mapData = (data, prefix) =>
-    cards.map((item, i) => ({
+    data.map((item, i) => ({
       id: `${prefix}${i}`,
       content: item,
       index: i,
