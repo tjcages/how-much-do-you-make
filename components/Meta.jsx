@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
 const Meta = (props) => {
@@ -6,23 +5,10 @@ const Meta = (props) => {
   const description =
     props.description ??
     "An inside look at the personal finances of young professionals.";
-  const image = props.image ?? "https://book.thenetworkstate.com/assets/quickstart-sectioned.png";
+  const image =
+    props.image ??
+    "https://book.thenetworkstate.com/assets/quickstart-sectioned.png";
   const url = props.url ?? "https://howmuchdoyoumake.com";
-
-  const [faviconHref, setFaviconHref] = useState("/favicon.ico");
-
-  useEffect(() => {
-    // Get current color scheme.
-    const matcher = window.matchMedia("(prefers-color-scheme: dark)");
-    // Set favicon initially.
-    setFaviconHref(getFaviconPath(matcher.matches));
-    // Change favicon if the color scheme changes.
-    matcher.onchange = () => setFaviconHref(getFaviconPath(matcher.matches));
-  }, [faviconHref]);
-
-  const getFaviconPath = (isDarkMode = false) => {
-    return isDarkMode ? "/favicon-dark.ico" : "/favicon.ico";
-  };
 
   return (
     <>
@@ -57,7 +43,7 @@ const Meta = (props) => {
           key="twitter:creator"
         />
 
-        <link rel="icon" href={faviconHref} />
+        <link rel="icon" href={"/favicon.ico"} />
       </Head>
       {props.children}
     </>
