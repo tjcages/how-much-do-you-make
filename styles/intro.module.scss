@@ -4,7 +4,7 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 1fr clamp(300px, 50vw, 600px);
+  grid-template-columns: 1fr clamp(300px, 40vw, 600px);
   grid-template-rows: 1fr;
   align-items: center;
   gap: 2vw;
