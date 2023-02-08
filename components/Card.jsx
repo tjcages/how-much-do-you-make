@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useSpring } from "framer-motion";
 
 import styles from "../styles/card.module.scss";
@@ -239,6 +240,13 @@ const Card = ({ i, card, length, size, rotateArray, current }) => {
       </div>
 
       <div className={styles.gradient} />
+      {isFirst && (
+        <Link
+          className={styles.link}
+          href={card.content["Article_Link"]}
+          target="_blank"
+        />
+      )}
     </motion.div>
   );
 };

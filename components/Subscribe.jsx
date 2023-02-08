@@ -25,15 +25,13 @@ const Intro = () => {
         setNotice(false);
       }, 2000);
       // trigger subscription API call
-      const response = await fetch("/api/subscribe", {
+      await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: subscriptionEmail }),
       });
-      const data = await response.json();
-      console.log(data);
     } else {
       setError(true);
       setTimeout(() => {

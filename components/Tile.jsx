@@ -61,7 +61,7 @@ export const Tile = forwardRef(
           {children}
         </div>
         <Link
-          href="/read"
+          href="https://how-much-do-you-make.beehiiv.com/subscribe"
           className={`${styles.caption} ${styles.bottom}`}
           style={{ opacity: cards ? 1 : 0 }}
         >

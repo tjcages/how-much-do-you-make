@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import { animateIn } from "../modules/text";
@@ -18,9 +19,12 @@ const Intro = () => {
 
   return (
     <div className={styles.main}>
-      <motion.div className={styles.location}>
-        <p>How Much Do You Make? 📈</p>
-      </motion.div>
+      <Link
+        className={styles.location}
+        href="https://how-much-do-you-make.beehiiv.com/subscribe"
+      >
+        <p>How much do you make? 📈</p>
+      </Link>
       <motion.div className={styles.container}>
         <div className={styles.headerContainer}>
           <h3 animate="header">Interviews on money & investing</h3>

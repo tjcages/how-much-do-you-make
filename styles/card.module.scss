@@ -142,4 +142,14 @@
       text-shadow: 1.5px 1.5px 0px hsla(0, 100%, 100%, 0.1);
     }
   }
+
+  .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+  }
 }
