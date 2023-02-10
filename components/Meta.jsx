@@ -8,7 +8,7 @@ const Meta = (props) => {
   const image =
     props.image ??
     "https://book.thenetworkstate.com/assets/quickstart-sectioned.png";
-  const url = props.url ?? "https://howmuchdoyoumake.com";
+  const url = props.url ?? "https://howmuchdoyoumake.xyz";
 
   return (
     <>
