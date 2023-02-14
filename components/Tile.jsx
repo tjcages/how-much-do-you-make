@@ -59,6 +59,7 @@ export const Tile = forwardRef(
         </div>
         <Link
           href="https://how-much-do-you-make.beehiiv.com/p/much-make-justin-barnett-fb8b"
+          target="_blank"
           className={`${styles.caption} ${styles.bottom}`}
           style={{ opacity: cards ? 1 : 0 }}
         >
