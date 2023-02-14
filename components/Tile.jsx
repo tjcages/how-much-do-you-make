@@ -44,9 +44,6 @@ export const Tile = forwardRef(
 
     return (
       <div ref={wrapperRef} className={styles.tileWrapper}>
-        {/* <div className={`${styles.caption} ${styles.top}`}>
-          <p>{captionTop}</p>
-        </div> */}
         <div
           className={styles.view}
           ref={ref}
@@ -61,7 +58,7 @@ export const Tile = forwardRef(
           {children}
         </div>
         <Link
-          href="https://how-much-do-you-make.beehiiv.com/subscribe"
+          href="https://how-much-do-you-make.beehiiv.com/p/much-make-justin-barnett-fb8b"
           className={`${styles.caption} ${styles.bottom}`}
           style={{ opacity: cards ? 1 : 0 }}
         >
