@@ -5,7 +5,7 @@ const Meta = (props) => {
   const description =
     props.description ??
     "An inside look at the personal finances of young professionals.";
-  const image = props.image ?? "/preview.jpg";
+  const image = props.image ?? "https://howmuchdoyoumake.xyz/preview.jpg";
   const url = props.url ?? "https://howmuchdoyoumake.xyz";
 
   return (
